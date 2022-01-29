@@ -9,12 +9,9 @@ contract NFT is ERC721URIStorage {
   Counters.Counter public _tokenIds;
   address public authorized;
 
-  constructor() ERC721("Web3List Token", "WLST") {
-      authorized = msg.sender;
-  }
+  constructor() ERC721("Web3List Token", "WLST") {}
 
   function createToken(string memory tokenURI) public returns (uint) {
-      require(msg.sender == authorized, 'not authorized to create NFTs');
       _tokenIds.increment();
       uint256 newItemId = _tokenIds.current();
       _mint(msg.sender, newItemId);

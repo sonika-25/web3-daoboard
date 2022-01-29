@@ -19,9 +19,7 @@ async function main() {
   const nft = await Nft.deploy();
 
   await nft.deployed();
-  let auth = await nft.connect(accounts[0]).authorized()
   console.log("NFT deployed to:", nft.address);
-  console.log("authorized person:", auth)
 }
 
 // We recommend this pattern to be able to use async/await everywhere

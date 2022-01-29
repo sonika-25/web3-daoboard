@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import NFT from './artifacts/contracts/NFT.sol/NFT.json';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 
 //on ropsten:
 const nftAddress = "0xc204C5e2253011397740275461543B0B3a2A0424";
@@ -15,8 +15,9 @@ function MainPage() {
   const [signer,setSigner] = useState('');
   const [provider,setProvider] = useState('');
   const [accounts,setAccounts] = useState([]);
-  const [images, setImages]=useState ([])
-  const [idNft, setIdNft]=useState ([])
+  const [images, setImages]=useState ([]);
+  const [idNft, setIdNft]=useState ([]);
+
 
   async function connecter (){
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -63,7 +64,7 @@ function MainPage() {
   async function mint(){
     let tokenIdcurr = await contract.connect(signer)._tokenIds();
     setIdNft(tokenIdcurr.toNumber())
-    await contract.connect(signer).createToken("https://media.istockphoto.com/vectors/welcome-to-the-team-hand-drawn-lettering-logo-icon-in-trendy-golden-vector-id1302839569?k=20&m=1302839569&s=612x612&w=0&h=rialOaZ0RMu1QsHjfUbZ0Q_d4LeAbIPz5V1SWpHi-yY=")
+    //await contract.connect(signer).createToken("https://media.istockphoto.com/vectors/welcome-to-the-team-hand-drawn-lettering-logo-icon-in-trendy-golden-vector-id1302839569?k=20&m=1302839569&s=612x612&w=0&h=rialOaZ0RMu1QsHjfUbZ0Q_d4LeAbIPz5V1SWpHi-yY=")
 
   }
   async function transferNft() {

@@ -21,7 +21,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   defaultNetwork: "hardhat",
   paths: {
-    artifacts: './client/src/artifacts',
+    artifacts: '../src/Components/Forms/RegisterForm/artifacts',
   },
   networks: {
     hardhat: {
