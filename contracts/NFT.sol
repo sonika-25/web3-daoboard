@@ -9,7 +9,7 @@ contract NFT is ERC721URIStorage {
   Counters.Counter public _tokenIds;
   address public authorized;
 
-  constructor() ERC721("AngelList Token", "ALST") {
+  constructor() ERC721("Web3List Token", "WLST") {
       authorized = msg.sender;
   }
 

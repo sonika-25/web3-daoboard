@@ -9,6 +9,7 @@
     "hardhat": "^2.8.2"
   },
   "dependencies": {
-    "load-json-file": "^1.1.0"
+    "load-json-file": "^1.1.0",
+    "react-router-dom": "^6.2.1"
   }
 }
